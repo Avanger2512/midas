@@ -12,7 +12,7 @@
           </li>
         </ul>
 
-        <a href="/" class="header__logo">
+        <a href="#" class="header__logo">
           <img src="@/assets/images/midas-logo.svg" alt="midas-logo">
         </a>
 

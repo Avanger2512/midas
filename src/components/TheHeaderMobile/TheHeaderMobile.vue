@@ -1,7 +1,7 @@
 <template>
   <header :class="['header-mobile', {'is-active': isActive, 'header-mobile_mod': anotherType}]">
     <div class="header-mobile__in">
-      <a href="/" class="header-mobile__logo">
+      <a href="#" class="header-mobile__logo">
         <img
           :src="require(`@/assets/images/${imgLogoSrc}.svg`)"
           alt="midas-logo">
@@ -118,7 +118,6 @@ export default {
 
 .header-mobile {
   $this: &;
-  position: relative;
 
   &__in {
     display: flex;
@@ -127,7 +126,6 @@ export default {
     justify-content: space-between;
     padding: 14px 20px 11px;
     background: $black;
-    max-width: 280px;
   }
 
   &__logo {
@@ -206,7 +204,8 @@ export default {
 
   &__menu {
     position: absolute;
-    top: 100%;
+    top: 60px;
+    bottom: 0;
     left: 0;
     z-index: 2;
     background: rgba(9, 12, 19, 0.86);
@@ -214,6 +213,7 @@ export default {
     max-width: 263px;
     width: 100%;
     padding: 24px 0;
+    overflow-y: auto;
 
     ul {
       &:not(:first-child) {

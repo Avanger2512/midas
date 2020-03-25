@@ -8,12 +8,16 @@
     <div class="container">
       <div class="row">
         <div class="column">
-          <the-header-mobile
-            :links="menuLinksFirstLogin" />
+          <div class="content">
+            <the-header-mobile
+              :links="menuLinksFirstLogin" />
+          </div>
         </div>
         <div class="column">
-          <the-header-mobile
-            :links="menuLinksFirst" />
+          <div class="content">
+            <the-header-mobile
+              :links="menuLinksFirst" />
+          </div>
         </div>
       </div>
 
@@ -24,15 +28,20 @@
 
       <div class="row">
         <div class="column">
-          <the-header-mobile
-            :anotherType="true"
-            :signIn="true"
-            :links="menuLinksSecond" />
+          <div class="content">
+            <the-header-mobile
+              :anotherType="true"
+              :signIn="true"
+              :links="menuLinksSecond" />
+          </div>
+
         </div>
         <div class="column">
-          <the-header-mobile
-            :anotherType="true"
-            :links="menuLinksSecond" />
+          <div class="content">
+            <the-header-mobile
+              :anotherType="true"
+              :links="menuLinksSecond" />
+          </div>
         </div>
       </div>
 
@@ -273,6 +282,13 @@ button {
   max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.content {
+  position: relative;
+  max-width: 320px;
+  min-height: 568px;
+  background: lighten($black, 10%);
 }
 
 .section {
