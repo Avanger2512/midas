@@ -241,6 +241,7 @@ export default {
 @import './assets/styles/variables.scss';
 @import './assets/styles/reset.scss';
 $column-width: 33.3%;
+
 body {
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

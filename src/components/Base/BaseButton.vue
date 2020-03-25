@@ -185,8 +185,24 @@ export default {
   }
 
   &_hover-underline {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% - 2px);
+      height: 1px;
+      opacity: 0;
+      background: currentColor;
+      transition: opacity .15s ease-in-out;
+    }
+
     &:hover {
-      text-decoration: underline;
+      &:after {
+        opacity: 1;
+      }
     }
   }
 
