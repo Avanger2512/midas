@@ -4,7 +4,39 @@
     <the-header-desktop />
     <br>
     <br>
-    <the-header-mobile />
+
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <the-header-mobile
+            :links="menuLinksFirstLogin" />
+        </div>
+        <div class="column">
+          <the-header-mobile
+            :links="menuLinksFirst" />
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div class="row">
+        <div class="column">
+          <the-header-mobile
+            :anotherType="true"
+            :signIn="true"
+            :links="menuLinksSecond" />
+        </div>
+        <div class="column">
+          <the-header-mobile
+            :anotherType="true"
+            :links="menuLinksSecond" />
+        </div>
+      </div>
+    </div>
+
 
     <card />
     <base-button />
@@ -26,6 +58,13 @@ export default {
     TheHeaderMobile,
     Card,
     BaseButton,
+  },
+  data() {
+    return {
+      menuLinksFirstLogin: ['Platform', 'Profile', 'BTC balance', 'My profits', 'Fline trading  bot', 'Midas coin', 'Sign out'],
+      menuLinksFirst: ['Platform', 'Fline trading  bot', 'Midas coin', 'Sign in'],
+      menuLinksSecond: ['Platform', 'Exchange', 'Fline trading  bot', 'Burn-out']
+    }
   }
 }
 </script>
@@ -63,10 +102,21 @@ button {
 }
 
 .container {
-  max-width: 1210px;
-  width: 100%;
-  padding: 0 15px;
+  max-width: 1200px;
+  padding: 0 20px;
   margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+
+  .column {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
 }
 
 </style>

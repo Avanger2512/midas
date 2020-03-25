@@ -5,18 +5,20 @@
         <ul class="header__list">
           <li v-for="(item, index) in menuItems"
               :key="index"
-            class="header__item">
+              class="header__item">
             <a href="#" class="header__link header__text">
               {{ item }}
             </a>
           </li>
         </ul>
+
         <a href="/" class="header__logo">
           <img src="@/assets/images/midas-logo.svg" alt="midas-logo">
         </a>
+
         <div class="header__info">
           <button type="button" class="header__balance header__text">
-            0.00347878
+            {{ balance }}
             <span class="header__currency">{{ currency }}</span>
           </button>
           <div class="header__profile">
@@ -48,7 +50,8 @@ export default {
     return {
       menuItems: ['Platform', 'Exchange', 'Fline trading bot', 'Burn-out'],
       userName: 'Egor Razzitooo',
-      currency: 'BTC'
+      currency: 'BTC',
+      balance: 0.00347878
     }
   }
 }
