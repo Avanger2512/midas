@@ -2,15 +2,19 @@
   <header :class="['header-mobile', {'is-active': isActive, 'header-mobile_mod': anotherType}]">
     <div class="header-mobile__in">
       <a href="/" class="header-mobile__logo">
-        <img :src="require(`@/assets/images/${imgLogoSrc}.svg`)"
-             alt="midas-logo">
+        <img
+          :src="require(`@/assets/images/${imgLogoSrc}.svg`)"
+          alt="midas-logo">
       </a>
 
-      <button @click="isActive = !isActive"
-              type="button"
-              class="header-mobile__hamburger">
-        <span v-for="(i, index) in 4"
-              :key="index" />
+      <button
+        @click="isActive = !isActive"
+        type="button"
+        class="header-mobile__hamburger">
+
+        <span
+          v-for="(i, index) in 4"
+          :key="index" />
       </button>
     </div>
     <div v-if="isActive"
@@ -22,6 +26,7 @@
           <a href="#" class="header-mobile__link">{{ link }}</a>
         </li>
       </ul>
+
       <template v-if="anotherType">
         <ul class="header-mobile__list">
           <li class="header-mobile__item">
@@ -46,17 +51,14 @@
             </a>
           </li>
         </ul>
-
       </template>
-
     </div>
-
   </header>
 </template>
 
 <script>
 
-const signObject =  {
+const signObject = {
   in: {
     icon: 'in',
     text: 'Sign in'
@@ -82,14 +84,8 @@ export default {
     }
   },
   created() {
-    if (this.anotherType) {
-      this.imgLogoSrc = 'midas-logo-sm'
-    }
-
-    if (!this.signIn) {
-      this.signIcon = signObject.out.icon
-      this.signText = signObject.out.text
-    }
+    this.changeLogoSrc();
+    this.setSignValue();
   },
   data() {
     return {
@@ -101,7 +97,19 @@ export default {
       currency: 'BTC'
     }
   },
-
+  methods: {
+    changeLogoSrc() {
+      if (this.anotherType) {
+        this.imgLogoSrc = 'midas-logo-sm'
+      }
+    },
+    setSignValue() {
+      if (!this.signIn) {
+        this.signIcon = signObject.out.icon
+        this.signText = signObject.out.text
+      }
+    }
+  }
 }
 </script>
 
@@ -168,7 +176,6 @@ export default {
         width: calc(100% - 8px);
 
         .is-active & {
-          // top: 12px;
           width: 100%;
         }
       }

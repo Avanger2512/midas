@@ -32,7 +32,6 @@ export default {
       this.currencyIconSrc = this.coinName;
     }
   }
-
 }
 </script>
 
