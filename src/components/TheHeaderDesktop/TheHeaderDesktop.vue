@@ -64,6 +64,10 @@ export default {
   background: $black;
   padding: 28px 0 27px;
 
+  @media only screen and (max-width: 960px) {
+    min-width: 960px;
+  }
+
   &__in {
     display: flex;
     flex-flow: row nowrap;

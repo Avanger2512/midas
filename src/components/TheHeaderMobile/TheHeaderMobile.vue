@@ -17,42 +17,43 @@
           :key="index" />
       </button>
     </div>
-    <div v-if="isActive"
-         class="header-mobile__menu">
-      <ul class="header-mobile__list">
-        <li v-for="(link, index) in links"
-            :key="index"
-            class="header-mobile__item">
-          <a href="#" class="header-mobile__link">{{ link }}</a>
-        </li>
-      </ul>
-
-      <template v-if="anotherType">
+    <transition name="fade">
+      <div v-if="isActive"
+           class="header-mobile__menu">
         <ul class="header-mobile__list">
-          <li class="header-mobile__item">
-            <a href="#" class="header-mobile__link is-active">Profile</a>
-          </li>
-          <li class="header-mobile__item">
-            <a href="#" class="header-mobile__link">
-              Balance: <span>{{ balance }}</span> {{ currency }}
-            </a>
-          </li>
-          <li class="header-mobile__item">
-            <a href="#" class="header-mobile__link">
-              Zero fees and Burn-out
-            </a>
+          <li v-for="(link, index) in links"
+              :key="index"
+              class="header-mobile__item">
+            <a href="#" class="header-mobile__link">{{ link }}</a>
           </li>
         </ul>
-        <ul class="header-mobile__list">
-          <li class="header-mobile__item">
-            <a href="#" class="header-mobile__link header-mobile__link_sign">
-              <img :src="require(`@/assets/images/sign-${signIcon}.svg`)" alt="">
-              {{ signText }}
-            </a>
-          </li>
-        </ul>
-      </template>
-    </div>
+        <template v-if="anotherType">
+          <ul class="header-mobile__list">
+            <li class="header-mobile__item">
+              <a href="#" class="header-mobile__link is-active">Profile</a>
+            </li>
+            <li class="header-mobile__item">
+              <a href="#" class="header-mobile__link">
+                Balance: <span>{{ balance }}</span> {{ currency }}
+              </a>
+            </li>
+            <li class="header-mobile__item">
+              <a href="#" class="header-mobile__link">
+                Zero fees and Burn-out
+              </a>
+            </li>
+          </ul>
+          <ul class="header-mobile__list">
+            <li class="header-mobile__item">
+              <a href="#" class="header-mobile__link header-mobile__link_sign">
+                <img :src="require(`@/assets/images/sign-${signIcon}.svg`)" alt="">
+                {{ signText }}
+              </a>
+            </li>
+          </ul>
+        </template>
+      </div>
+    </transition>
   </header>
 </template>
 
@@ -264,4 +265,5 @@ export default {
     }
   }
 }
+
 </style>

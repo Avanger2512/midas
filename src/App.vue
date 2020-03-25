@@ -249,6 +249,8 @@ export default {
 
 @import './assets/styles/variables.scss';
 @import './assets/styles/reset.scss';
+@import './assets/styles/animation.scss';
+
 $column-width: 33.3%;
 
 body {
@@ -258,6 +260,7 @@ body {
   color: $primary-gray;
   font-size: 14px;
   line-height: 1.4;
+  min-width: 320px;
 }
 
 a {
@@ -289,6 +292,10 @@ button {
   max-width: 320px;
   min-height: 568px;
   background: lighten($black, 10%);
+
+  @media only screen and (max-width: 960px) {
+    margin-bottom: 50px;
+  }
 }
 
 .section {
@@ -308,9 +315,19 @@ button {
   flex-flow: row wrap;
   justify-content: space-between;
 
+  @media only screen and (max-width: 960px) {
+    flex-direction: column;
+  }
+
   .column {
     max-width: $column-width;
     flex-basis: $column-width;
+
+    @media only screen and (max-width: 960px) {
+      max-width: 100%;
+      flex-basis: 100%;
+      margin-bottom: 20px;
+    }
   }
 }
 
