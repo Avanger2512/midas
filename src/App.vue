@@ -43,15 +43,22 @@
 
       <section class="section section_black">
         <card />
-
       </section>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+
     </div>
 
+    <section class="section section_black">
+      <div class="container">
+        <base-button />
+      </div>
 
-
-
-
-    <base-button />
+    </section>
 
   </div>
 </template>
@@ -121,7 +128,7 @@ button {
 
 .section {
   padding: 40px;
-  
+
   &_black {
     background: $black;
   }
