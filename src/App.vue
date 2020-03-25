@@ -35,10 +35,22 @@
             :links="menuLinksSecond" />
         </div>
       </div>
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <section class="section section_black">
+        <card />
+
+      </section>
     </div>
 
 
-    <card />
+
+
+
     <base-button />
 
   </div>
@@ -105,6 +117,14 @@ button {
   max-width: 1200px;
   padding: 0 20px;
   margin: 0 auto;
+}
+
+.section {
+  padding: 40px;
+  
+  &_black {
+    background: $black;
+  }
 }
 
 .row {
